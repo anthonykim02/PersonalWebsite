@@ -132,12 +132,9 @@
         	box-shadow: 2px 2px 2px #999;
 		}
 
-		#beforeskills {
-			line-height:10vh;
-		}
-
 		#skillsdiv {
 			width:100%;
+			padding-top:10vh;
 		}
 
 		#skillsdiv h2 {
@@ -152,16 +149,20 @@
 			font-size:1em;
 			line-height:5vh;
 			margin:0 15vw 0 15vw;
+			color:#424C51;
 
 		}
 
 		.skilltype {
 			font-family:modern;
 			font-size:1.6em;
+			font-weight:bold;
+			color:#3A3A3A;
 		}
 
-		#beforeprojects {
-			line-height:10vh;
+		#projectsdiv {
+			font-family:paragraph;
+			padding-top:10vh;
 		}
 
 		#projectsdiv h2 {
@@ -171,11 +172,49 @@
 			color:#3A3A3A;
 		}
 
-		#beforeabout {
-			line-height:12vh;
+		.project {
+			width:32vw;
+			float:left;
+			padding-left:5vw;
+		}
+
+		.project img{
+			height:8vh;
+			float:left;
+		}
+
+		.project h3 {
+			font-size:1.3em;
+			margin-left:6vw;
+			color:#3A3A3A;;
+		}
+
+		.project p {
+			line-height:4vh;
+			color:#424C51;
+		}
+
+
+
+		#hurtalert {
+			margin-left:13vw;
+		}
+
+		#emulations {
+			padding-right:5vw;
+		}
+
+		#pokelocate {
+			margin-left:13vw;
+			
+		}
+
+		#illuminate {
+			padding-right:5vw;
 		}
 
 		#aboutdiv {
+			padding-top:10vh;
 			width:100%;
 		}
 
@@ -191,14 +230,12 @@
 			font-family:paragraph;
 			line-height:5vh;
 			font-size:1em;
-		}
-
-		#beforecontact {
-			line-height:10vh;
+			color:#424C51;
 		}
 
 		#contactdiv {
 			width:100%;
+			padding-top:10vh;
 		}
 
 		#contactdiv h2 {
@@ -218,6 +255,7 @@
 			font-family:paragraph;
 			line-height:5vh;
 			font-size:1em;
+			color:#424C51;
 		}
 
 		#email {
@@ -306,9 +344,12 @@
 		#github {
 			background-image:url(images/github.svg);
 		}
-
-
 	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- <script src="scripts.js"></script> -->
+
+	
 </head>
 
 <body>
@@ -335,7 +376,7 @@
 			</div>
 		</div>
 
-		<br id="beforeskills" />
+		<!-- <br id="beforeskills" /> -->
 
 		<div id="skillsdiv">
 			<h2>S K I L L S</h2>
@@ -357,13 +398,36 @@
 
 		<div class="floatbreak"></div>
 
-		<br id="beforeprojects" />
+		<!-- <br id="beforeprojects" /> -->
 
 		<div id="projectsdiv">
 			<h2>P R O J E C T S</h2>
+			<div class="project" id="hurtalert">
+				<img src="images/medical.svg"/>
+				<h3>HurtAlert</h3>
+				<p>Web application that finds the safest route from one place to another within Berkeley using police data. Also provides graphs and heat maps to illustrate crime trends in the city. Won the Code4Impact award at Angelhack Silicon Valley.</p>
+			</div>
+			<div class="project" id="emulations">
+				<img src="images/game.svg" />
+				<h3>Emulations</h3>
+				<p>My attempts at imitating popular mobile and web games. These include a console version of 2048, as well as iOS versions of Piano Tiles and Flappy Bird made using iOS Sprite Kit.</p>
+			</div>
+			<div class="floatbreak"></div>
+			<div class="project" id="pokelocate">
+				<img src="images/map.svg" />
+				<h3>PokeLocate</h3>
+				<p>Complementary app to the mobile game Pokemon Go. Solved an early navigational issue with the game by allowing users to post where they found Pokemon and share the information with others. iOS applicaiton made in Swift.</p>
+			</div>
+			<div class="project" id="illuminate">
+				<img src="images/lightbulb.svg" />
+				<h3>Illuminate</h3>
+				<p>An original game I made where tiles gradually gain color and the player must tap tiles to turn them back to white. Game ends when all the tiles on the board are colored.</p>
+			</div>
 		</div>
 
-		<br id="beforeabout" />
+		<div class="floatbreak"></div>
+
+		<!-- <br id="beforeabout" /> -->
 
 		<div id="aboutdiv">
 			<h2>A B O U T</h2>
@@ -375,7 +439,7 @@
 			</p>
 		</div>
 
-		<br id="beforecontact" />
+		<!-- <br id="beforecontact" /> -->
 
 		<div id="contactdiv">
 			<h2>C O N T A C T</h2>
@@ -399,26 +463,58 @@
 
 	<script>
 		var num = 1;
-		var skill = document.getElementById("ability");
-
 		var timer = setInterval(function() {
 		 	
 		 	if (num == 1) {
-		 		skill.innerHTML = "S O F T W A R E &nbsp; E N G I N E E R";
+		 		$("#ability").html("S O F T W A R E &nbsp; E N G I N E E R");
 		 	} else if (num == 2) {
-		 		skill.innerHTML = "G A M E &nbsp; D E S I G N E R";
+		 		$("#ability").html("G A M E &nbsp; D E S I G N E R");
 		 	} else if (num == 3) {
-		 		skill.innerHTML = "M O B I L E / W E B &nbsp; D E V E L O P E R";
+		 		$("#ability").html("M O B I L E / W E B &nbsp; D E V E L O P E R");
 		 	} else if (num == 4) {
-		 		skill.innerHTML = "I N N O V A T O R";
+		 		$("#ability").html("I N N O V A T O R");
 		 	}
 
 		 	num++;
 		 	if (num == 5) {
 		 		num = 1;
 		 	}
+		}, 2000);
 
-			}, 2000);
+		function scrollUp(d){
+		    var start = self.pageYOffset;
+		    var goal = document.getElementById(d).offsetTop;
+		    var current = start;
+
+		    var timer = setInterval(function() {
+		    	current += 9;
+		    	var diff = current - goal
+		    	if (diff <= 9 && diff >= -9) {
+		    		clearInterval(timer);
+		    	}
+		    	window.scrollTo(0, current);
+		    }, 1);
+		}
+
+		$("#home").click(function() {
+			$("html, body").animate({ scrollTop: $("#homediv").offset().top }, 1000);
+		});
+
+		$("#skills").click(function() {
+			$("html, body").animate({ scrollTop: $("#skillsdiv").offset().top }, 1000);
+		});
+
+		$("#projects").click(function() {
+			$("html, body").animate({ scrollTop: $("#projectsdiv").offset().top }, 1000);
+		});
+
+		$("#about").click(function() {
+			$("html, body").animate({ scrollTop: $("#aboutdiv").offset().top }, 1000);
+		});
+
+		$("#contact").click(function() {
+			$("html, body").animate({ scrollTop: $("#contactdiv").offset().top }, 1000);
+		});
 
 		document.getElementById("sendemail").onclick=function() {
 			window.location.href = "mailto:anthonykim623@gmail.com";
