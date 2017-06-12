@@ -84,6 +84,7 @@
 		  	background-color:#43ABE0;
   			color: white;
   			border:none;
+  			cursor:pointer;
 		}
 
 		#nametitle {
@@ -233,6 +234,17 @@
 			color:#424C51;
 		}
 
+		#resume {
+			font-size:1.1em;
+			color:#4D89EA;
+			text-decoration:underline;
+		}
+
+		#resume:hover {
+			color:#546DF9;
+			cursor:pointer;
+		}
+
 		#contactdiv {
 			width:100%;
 			padding-top:10vh;
@@ -262,6 +274,11 @@
 			font-size:1.1em;
 			text-decoration:underline;
 			color:#4D89EA;
+		}
+
+		#email:hover {
+			color:#546DF9;
+			cursor:pointer;
 		}
 
 		#emailbutton {
@@ -304,6 +321,7 @@
 			background-color:#4D89EA;
   			color: white;
   			border:none;
+  			cursor:pointer;
 		}
 
 		#social {
@@ -331,6 +349,7 @@
 		.socialbutton:hover {
 			-webkit-transform: scale(1.2);
   			transform: scale(1.2);
+  			cursor:pointer;
 		}
 
 		#facebook {
@@ -435,7 +454,7 @@
 				Hello and thank you for visiting my personal webpage! My name is Anthony and I'm a third year computer science student at the University of California, Berkeley. In school I learn more of the theoretical side of CS, but during my free time I enjoy exploring the fascinating world of development and design as well. In particular, I'm currently focused on expanding my knowledge in Game Development.<br /> <br/>
 				Although I'm very career driven, I'm also extremely passionate in my hobbies. I started playing fingerstyle guitar during the winter of 2016 and have been practicing daily since. I currently play on two Cal intramural basketball teams and am a diehard Spurs fan (GO SPURS GO!). Lastly, I'm into anything that takes graphic design/art to make, whether that be anime (One Punch Man), gaming (League of Legends), or a beautiful user interface (this website ;)).<br /> <br />
 				Once again, welcome and please enjoy! <br /> <br />
-				If you would like a more compact version of this site's information, feel free to download my resume here:
+				If you would like a more compact version of this site's information, feel free to download my resume <a href="AnthonyKim.pdf" target="_blank" id="resume">here</a>
 			</p>
 		</div>
 
@@ -515,6 +534,10 @@
 		$("#contact").click(function() {
 			$("html, body").animate({ scrollTop: $("#contactdiv").offset().top }, 1000);
 		});
+
+		document.getElementById("email").onclick=function() {
+			window.location.href = "mailto:anthonykim623@gmail.com";
+		}
 
 		document.getElementById("sendemail").onclick=function() {
 			window.location.href = "mailto:anthonykim623@gmail.com";
